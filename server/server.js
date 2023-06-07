@@ -16,34 +16,8 @@ require('dotenv').config()
 const db = require('./config/db')
 db();
 
-// Category Api
-app.use('/api/category', require('./apis/category/category.route'))
-
-//Product Api
-app.use('/api/product', require('./apis/product/product.route'))
-
-
-// Image Api
-app.use('/api/images', require('./apis/files/files.route'));
-
-// User Api
-app.use('/api/user', require('./apis/user/user.route'));
-
-// Main Banner Api
-app.use('/api/mainBanner', require('./apis/mainBanner/mainBanner.route'));
-
-// Semi Banner Api
-app.use('/api/semiBanner', require('./apis/semiBanner/semiBanner.route'));
-
-// order Api
-app.use('/api/order', require('./apis/order/order.route'));
-
-// site setting for admin
-app.use('/api/setting', require('./apis/siteSetting/setting.route'));
-
-// Pages Api
-app.use('/api/page', require('./apis/pages/pages.route'));
-
+// Apis
+app.use('/api/', require('./apis/routes'));
 
 // server run
 app.listen(port, ()=>{
